@@ -1,0 +1,52 @@
+<h2>One way</h2>
+<br />
+
+Msg <input type="text" [ngModel]="msg1" />
+<p>{{ msg1 }}</p>
+
+<h2>Two ways</h2>
+<br />
+
+Msg <input type="text" [(ngModel)]="msg2" />
+<p>{{ msg2 }}</p>
+
+<h3>Rectangle</h3>
+A <input type="text" [(ngModel)]="a" />
+<br />
+B <input type="text" [(ngModel)]="b" />
+<br />
+<input type="button" value="Calculate" (click)="calculate()" />
+<br />
+Area:
+<p>{{ area }}</p>
+Perimeter:
+<p>{{ perimeter }}</p>
+
+Min<input type="text" [(ngModel)]="min"/> Max <input type="text" [(ngModel)]="max"/>
+<input type="button" value="Search" (click)="seacrhProduct()" />
+
+<h3>Product List</h3>
+<table border="1">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>photo</th>
+    <th>status</th>
+    <th>price</th>
+    <th>quantity</th>
+    <th>total</th>
+  </tr>
+  <ng-container *ngFor="let p of products">
+    <tr>
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <th>
+        <img src="assets/images/{{ p.photo }}" alt="" width="200">
+      </th>
+      <th>{{ p.status }}</th>
+      <th>{{ p.price }}</th>
+      <th>{{ p.quantity }}</th>
+      <th>{{ p.quantity * p.price }}</th>
+    </tr>
+  </ng-container>
+</table>

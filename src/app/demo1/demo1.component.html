@@ -1,0 +1,42 @@
+<h3>demo1 works!</h3>
+<p>Username: {{ username }}</p>
+<p>Quantity: {{ quantity }}</p>
+<p>Price: {{ price }}</p>
+<p>Status: {{ status ? "active" : "inactive" }}</p>
+<p>Total: {{ price * quantity }}</p>
+
+<h3>Name 1</h3>
+<ul>
+  <li *ngFor="let name of names; let i = index">{{ i }} - {{ name }}</li>
+</ul>
+
+<h3>Name 2</h3>
+<ul>
+  <ng-container *ngFor="let name of names; let i = index">
+    <li>{{ i }} - {{ name }}</li>
+  </ng-container>
+</ul>
+
+<h3>Product List</h3>
+<table border="1">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>photo</th>
+    <th>status</th>
+    <th>price</th>
+    <th>quantity</th>
+    <th>total</th>
+  </tr>
+  <ng-container *ngFor="let p of products">
+    <tr>
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <th>{{ p.photo }}</th>
+      <th>{{ p.status }}</th>
+      <th>{{ p.price }}</th>
+      <th>{{ p.quantity }}</th>
+      <th>{{ p.quantity * p.price }}</th>
+    </tr>
+  </ng-container>
+</table>

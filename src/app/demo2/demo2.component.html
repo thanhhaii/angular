@@ -1,0 +1,41 @@
+<h3>Click</h3>
+<input type="button" value="Click Me" (click)="hello($event)" />
+<br />
+<input type="button" value="white" (click)="changeBackground($event)" />
+<input type="button" value="blue" (click)="changeBackground($event)" />
+<input type="button" value="yello" (click)="changeBackground($event)" />
+<input type="button" value="red" (click)="changeBackground($event)" />
+
+<br />
+<br />
+<img src="assets/images/img1.jpg" width="{{width}}" height="{{height}}" class="img" />
+<br />
+<input type="button" value="120x100" (click)="changeSize($event)" />
+<input type="button" value="220x200" (click)="changeSize($event)" />
+<input type="button" value="320x300" (click)="changeSize($event)" />
+<br>
+FullName <input type="text" (keyup.enter)="hi($event)">
+<br/>
+<input type="radio" name="gender" value="m" checked (change)="selectGender($event)" /> Male
+<input type="radio" name="gender" value="f" (change)="selectGender($event)" /> Female
+<br/>
+
+<img src="assets/images/img1.jpg" width="{{widthRadio}}" height="{{heigthRadio}}" class="img" />
+<br/>
+<input type="radio" name="size" value="120x100" checked (change)="changeSizeRadio($event)">120x100
+<input type="radio" name="size" value="220x200" (change)="changeSizeRadio($event)">220x200
+<input type="radio" name="size" value="320x300" (change)="changeSizeRadio($event)">320x300
+<br/>
+<input type="file" (change)="selectFile($event)">
+<br/>
+<input type="file" multiple (change)="selectFiles($event)">
+<br/>
+<br/>
+<select (change)="selectCountry($event)">
+  <ng-container *ngFor="let country of countries; let i = index">
+    <option value="{{i}}">{{country.name}}</option>
+  </ng-container>
+</select>
+<p>Name: {{country.name}}</p>
+<p>Area: {{country.area}}</p>
+<img src="assets/images/{{country.flag}}" alt="">

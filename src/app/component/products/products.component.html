@@ -1,0 +1,30 @@
+<p>products works!</p>
+<h3>Product List</h3>
+<table border="1">
+  <tr>
+    <th>id</th>
+    <th>name</th>
+    <th>photo</th>
+    <th>status</th>
+    <th>price</th>
+    <th>quantity</th>
+    <th>total</th>
+    <th>Action</th>
+  </tr>
+  <ng-container *ngFor="let p of products">
+    <tr>
+      <td>{{ p.id }}</td>
+      <td>{{ p.name }}</td>
+      <td>
+        <img src="assets/images/{{ p.photo }}" alt="" width="120">
+      </td>
+      <td>{{ p.status }}</td>
+      <td>{{ p.price }}</td>
+      <td>{{ p.quantity }}</td>
+      <td>{{ p.quantity * p.price }}</td>
+      <td>
+        <a [routerLink]="['/details', {id: p.id}]">Details</a>
+      </td>
+    </tr>
+  </ng-container>
+</table>
